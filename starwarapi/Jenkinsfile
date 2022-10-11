@@ -20,7 +20,7 @@ pipeline {
             steps {
                 dir("starwarapi") {
                 bat 'docker build -t starwarapi .'
-                bat 'docker login -u admin -p admin '
+                bat 'docker login -u suryaveersingh -p Yodha@1207 '
                 bat 'docker tag starwarapi suryaveersingh/starwarapi'
                 bat 'docker image push suryaveersingh/starwarapi'
             }
