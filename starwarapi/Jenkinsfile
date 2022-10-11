@@ -13,22 +13,22 @@ pipeline {
         }
          stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'success'
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t starwarapi .'
-                sh 'docker login -u $dockerhub_USR --password-stdin'
-                sh 'docker tag starwarapi suryaveersingh/starwarapi'
-                sh 'docker image push suryaveersingh/starwarapi'
+                bat 'docker build -t starwarapi .'
+                bat 'docker login -u $dockerhub_USR --password-stdin'
+                bat 'docker tag starwarapi suryaveersingh/starwarapi'
+                bat 'docker image push suryaveersingh/starwarapi'
             }
         }
         stage('Deploy Docker') {
             steps {
-                sh 'docker stop starwarapi | true'
-                sh 'docker rm starwarapi | true'
-                sh 'docker run --name starwarapi -d -p 8086:8086 suryaveersingh/starwarapi'
+                bat 'docker stop starwarapi | true'
+                bat 'docker rm starwarapi | true'
+                bat 'docker run --name starwarapi -d -p 8086:8086 suryaveersingh/starwarapi'
             }
         }
     }
