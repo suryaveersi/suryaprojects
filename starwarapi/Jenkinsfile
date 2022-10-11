@@ -6,22 +6,27 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'gradle assemble'
+                sh 'mvn clean package'
             }
         }
          stage('Test') {
             steps {
-                sh 'gradle test'
+                sh 'mvn test'
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh 'gradle docker'
+                sh 'docker build -t starwarapi .'
+                sh 'docker login -u $dockerhub_USR --password-stdin'
+                sh 'docker tag starwarapi suryaveersingh/starwarapi'
+                sh 'docker image push suryaveersingh/starwarapi'
             }
         }
-        stage('Run Docker Image') {
+        stage('Deploy Docker') {
             steps {
-                sh 'gradle dockerRun'
+                sh 'docker stop starwarapi | true'
+                sh 'docker rm starwarapi | true'
+                sh 'docker run --name starwarapi -d -p 8086:8086 suryaveersingh/starwarapi'
             }
         }
     }
