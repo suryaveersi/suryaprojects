@@ -13,7 +13,7 @@ pipeline {
         }
          stage('Test') {
             steps {
-                bat 'success'
+                echo 'Succeeded!'
             }
         }
         stage('Build Docker Image') {
