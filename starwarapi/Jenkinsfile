@@ -18,17 +18,21 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
+                dir("starwarapi") {
                 bat 'docker build -t starwarapi .'
                 bat 'docker login -u $dockerhub_USR --password-stdin'
                 bat 'docker tag starwarapi suryaveersingh/starwarapi'
                 bat 'docker image push suryaveersingh/starwarapi'
             }
         }
+        }
         stage('Deploy Docker') {
             steps {
+                dir("starwarapi") {
                 bat 'docker stop starwarapi | true'
                 bat 'docker rm starwarapi | true'
                 bat 'docker run --name starwarapi -d -p 8086:8086 suryaveersingh/starwarapi'
+            }
             }
         }
     }
