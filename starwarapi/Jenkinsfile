@@ -13,7 +13,7 @@ pipeline {
         }
          stage('Test') {
             steps {
-                sh 'success'
+                bat 'success'
             }
         }
         stage('Build Docker Image') {
