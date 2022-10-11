@@ -29,8 +29,8 @@ pipeline {
         stage('Deploy Docker') {
             steps {
                 dir("starwarapi") {
-                bat 'docker stop starwarapi | true'
-                bat 'docker rm starwarapi | true'
+                bat 'docker stop starwarapi'
+                bat 'docker rm starwarapi'
                 bat 'docker run --name starwarapi -d -p 8086:8086 suryaveersingh/starwarapi'
             }
             }
