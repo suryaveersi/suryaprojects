@@ -25,9 +25,6 @@ public class FilmService implements FetchData {
     public List<Film> getAllData()
     {
         List<Film> data = filmRepo.findAll();
-        List<FilmResponse> response = FilmResponse.builder()
-                .
-
         return data;
     }
 
