@@ -3,5 +3,5 @@ RUN mkdir /app
 WORKDIR /app
 EXPOSE 8080
 COPY target/starwarapi-0.0.1-SNAPSHOT.jar starwar.jar
-ENTRYPOINT ["java","-jar","starwar.jar"]
+ENTRYPOINT ["java","-jar","starwar.jar","-web -webAllowOthers -tcp -tcpAllowOthers -browser"]
 CMD [/bin/bash]
