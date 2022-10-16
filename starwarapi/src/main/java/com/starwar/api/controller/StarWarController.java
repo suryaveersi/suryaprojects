@@ -4,6 +4,10 @@ package com.starwar.api.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.starwar.api.dto.FilmResponse;
+import com.starwar.api.dto.PeopleResponse;
+import com.starwar.api.dto.PlanetResponse;
+import com.starwar.api.dto.StarWarResponse;
 import com.starwar.api.model.Film;
 import com.starwar.api.model.People;
 import com.starwar.api.service.FilmService;
@@ -43,8 +47,6 @@ public class StarWarController {
 	PeopleService peopleService;
 	
 	private static final String BASE_URL = "http://swapi.dev/api";
-	private Object collect;
-
 
 
 	@GetMapping(value="/api/{type}",produces=MediaType.APPLICATION_JSON_VALUE)
@@ -63,6 +65,7 @@ public class StarWarController {
 			System.out.println("hi");
 			return obj;
 		}
+
 		else {
 			throw new InvalidEndpointRequestException("Star War Item not Found", "Not a valid Type");
 		}
@@ -70,25 +73,25 @@ public class StarWarController {
 	}
 	
 	@RequestMapping(value="/api/{type}/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Type getStarWarDataById(@PathVariable("type") String type,@PathVariable("id") Integer id)
+	public StarWarResponse getStarWarDataById(@PathVariable("type") String type, @PathVariable("id") Integer id)
 	{
 
 		if(type.equals("planet"))
 		{
-			Planet planetdatabyid = planetService.getPlanetDataById(id);
+			StarWarResponse planetResponse = planetService.getDataById(id);
 
-			return planetdatabyid;
+			return planetResponse;
 		}
 		if(type.equals("film"))
 		{
-			Film filmdatabyid = filmService.geFilmDataById(id);
+			StarWarResponse filmdatabyid = filmService.getDataById(id);
 
 			return filmdatabyid;
 		}
 
 		if(type.equals("people"))
 		{
-			People peopledatabyid = peopleService.gePeopleDataById(id);
+			StarWarResponse peopledatabyid = peopleService.getDataById(id);
 
 			return peopledatabyid;
 		}
@@ -101,23 +104,23 @@ public class StarWarController {
 	}
 
 	@RequestMapping(value="/api/{type}/",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Type getStarWarDataByName(@RequestParam(name = "search") String name, @PathVariable("type") String type) {
+	public StarWarResponse getStarWarDataByName(@RequestParam(name = "search") String name, @PathVariable("type") String type) {
 
 
 		if(type.equals("planet"))
 		{
-			Planet planetdatabyname = planetService.getPlanetDataByName(name);
+			StarWarResponse planetdatabyname = planetService.getDataByName(name);
 
 			return planetdatabyname;
 		}
 		if(type.equals("film"))
 		{
-			Film filmdatabyname = filmService.getFilmDataByName(name);
+			StarWarResponse filmdatabyname = filmService.getDataByName(name);
 			return filmdatabyname;
 		}
 		if(type.equals("people"))
 		{
-			People peopledatabyid = peopleService.getPeopleDataByName(name);
+			StarWarResponse peopledatabyid = peopleService.getDataByName(name);
 
 			return peopledatabyid;
 		}

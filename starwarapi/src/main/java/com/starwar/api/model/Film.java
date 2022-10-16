@@ -31,17 +31,27 @@ public class Film implements Type {
 	@JsonManagedReference
 	List<Planet> planets;
 
+	@OneToMany(mappedBy = "film")
+	@JsonManagedReference
+	List<People> peoples;
+
 	@ManyToOne
 	@JsonBackReference
 	@JoinColumn(name="planet_id")
 	Planet planet;
 
-	public Film(Integer filmid, String title, Integer episode_id, Planet planet, String url) {
+	@ManyToOne
+	@JsonBackReference
+	@JoinColumn(name="people_id")
+	People people;
+
+	public Film(Integer filmid, String title, Integer episode_id, Planet planet, String url,People people) {
 		this.filmid = filmid;
 		this.title = title;
 		this.episode_id = episode_id;
 		this.planet = planet;
 		this.url = url;
+		this.people = people;
 	}
 
 
