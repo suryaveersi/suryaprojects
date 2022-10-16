@@ -1,6 +1,8 @@
 package com.starwar.api.security;
 
+import org.h2.server.web.WebServlet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,17 +10,11 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.authentication.AuthenticationManagerBeanDefinitionParser;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.starwar.api.service.CustomUserDetailService;
-
-
 
 
 @Configuration
@@ -46,7 +42,10 @@ public class Securityconfig extends WebSecurityConfigurerAdapter {
 		 */
 		
 	    http.csrf().disable().
-		authorizeRequests().antMatchers("/authenticatetoken").permitAll().anyRequest().authenticated();
+		authorizeRequests().antMatchers("/authenticatetoken").permitAll().and().
+				authorizeRequests().antMatchers("/h2-console/**")
+				.permitAll().anyRequest().authenticated();
+		http.headers().frameOptions().disable();
 		
 		
 	     http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
@@ -82,6 +81,13 @@ public class Securityconfig extends WebSecurityConfigurerAdapter {
 		// TODO Auto-generated method stub
 		return new BCryptPasswordEncoder();
 
+	}
+
+	@Bean
+	ServletRegistrationBean h2servletRegistration(){
+		ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
+		registrationBean.addUrlMappings("/h2-console/*");
+		return registrationBean;
 	}
 
 	
