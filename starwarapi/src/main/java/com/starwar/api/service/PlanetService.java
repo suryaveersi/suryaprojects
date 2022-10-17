@@ -2,12 +2,11 @@ package com.starwar.api.service;
 
 
 import com.starwar.api.dao.PlanetRepo;
-import com.starwar.api.dto.FilmResponse;
 import com.starwar.api.dto.PlanetResponse;
 import com.starwar.api.dto.StarWarResponse;
 import com.starwar.api.exception.StarWarItemIdNotFoundException;
 import com.starwar.api.exception.StarWarItemNameNotFoundException;
-import com.starwar.api.model.FetchData;
+import com.starwar.api.dto.FetchData;
 import com.starwar.api.model.Planet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,13 +24,13 @@ public class PlanetService implements FetchData {
     @Override
     public StarWarResponse getDataById(Integer id)
     {
-        Planet databyid = planetRepo.findById(id).orElseThrow(()-> new StarWarItemIdNotFoundException(id,"Planet id not found in database"));
+        Planet dataById = planetRepo.findById(id).orElseThrow(()-> new StarWarItemIdNotFoundException(id,"Planet id not found in database"));
 
         StarWarResponse planetResponse = PlanetResponse.builder()
-                .url(databyid.getUrl())
-                .name(databyid.getName())
-                .films(databyid.getFilms().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
-                .peoples(databyid.getPeoples().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
+                .url(dataById.getUrl())
+                .name(dataById.getName())
+                .films(dataById.getFilms().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
+                .peoples(dataById.getPeoples().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
                 .build();
 
         return planetResponse;
@@ -40,8 +39,8 @@ public class PlanetService implements FetchData {
     public List<StarWarResponse> getAllData()
     {
         List<StarWarResponse> planetResponseList = new ArrayList<>();
-        List<Planet> datas = planetRepo.findAll();
-        for(Planet data : datas) {
+        List<Planet> planetList = planetRepo.findAll();
+        for(Planet data : planetList) {
 
             StarWarResponse planetResponse  =   PlanetResponse.builder()
                     .url(data.getUrl())
@@ -58,13 +57,13 @@ public class PlanetService implements FetchData {
     @Override
     public StarWarResponse getDataByName(String name)
     {
-        Planet databyname = planetRepo.findByName(name).orElseThrow(()-> new StarWarItemNameNotFoundException(name,"Film name not found in database"));
+        Planet dataByName = planetRepo.findByName(name).orElseThrow(()-> new StarWarItemNameNotFoundException(name,"Film name not found in database"));
 
         StarWarResponse planetResponse = PlanetResponse.builder()
-                .url(databyname.getUrl())
-                .name(databyname.getName())
-                .films(databyname.getFilms().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
-                .peoples(databyname.getPeoples().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
+                .url(dataByName.getUrl())
+                .name(dataByName.getName())
+                .films(dataByName.getFilms().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
+                .peoples(dataByName.getPeoples().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
                 .build();
 
         return planetResponse;

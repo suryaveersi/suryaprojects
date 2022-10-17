@@ -1,24 +1,17 @@
 package com.starwar.api.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class JwtResponse {
 	
 	private String jwtToken;
-	
-	public JwtResponse() {
-		// TODO Auto-generated constructor stub
-	}
 
-	public JwtResponse(String token) {
-		// TODO Auto-generated constructor stub
-		this.jwtToken = token;
-	}
-
-	public String getJwtToken() {
-		return jwtToken;
-	}
-
-	public void setJwtToken(String jwtToken) {
-		this.jwtToken = jwtToken;
-	}
 
 }

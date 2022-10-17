@@ -18,10 +18,9 @@ public class CustomUserDetailService implements UserDetailsService {
 
 	 @Lazy
 	 @Autowired BCryptPasswordEncoder bcrypt;
-
 	 @Value("${spring.username}")
 	 String user;
-	@Value("${spring.password}")
+	 @Value("${spring.password}")
 	String password;
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

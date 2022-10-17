@@ -3,14 +3,11 @@ package com.starwar.api.service;
 
 import com.starwar.api.dao.FilmRepo;
 import com.starwar.api.dto.FilmResponse;
-import com.starwar.api.dto.PlanetResponse;
 import com.starwar.api.dto.StarWarResponse;
 import com.starwar.api.exception.StarWarItemIdNotFoundException;
 import com.starwar.api.exception.StarWarItemNameNotFoundException;
-import com.starwar.api.model.FetchData;
+import com.starwar.api.dto.FetchData;
 import com.starwar.api.model.Film;
-import com.starwar.api.model.Planet;
-import com.starwar.api.model.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,11 +23,11 @@ public class FilmService implements FetchData {
 
 
     public List<StarWarResponse> getAllData() {
-        List<Film> films = filmRepo.findAll();
+        List<Film> filmList = filmRepo.findAll();
 
         List<StarWarResponse> filmResponseList = new ArrayList<>();
 
-        for(Film film : films) {
+        for(Film film : filmList) {
 
             StarWarResponse filmResponse = FilmResponse.builder()
                     .title(film.getTitle())
@@ -49,27 +46,27 @@ public class FilmService implements FetchData {
     @Override
     public StarWarResponse getDataByName(String name)
     {
-        Film databyname = filmRepo.findByTitle(name).orElseThrow(()-> new StarWarItemNameNotFoundException(name,"Film name not found in database"));
+        Film dataByName = filmRepo.findByTitle(name).orElseThrow(()-> new StarWarItemNameNotFoundException(name,"Film name not found in database"));
         StarWarResponse response = FilmResponse.builder()
-                 .title(databyname.getTitle())
-                 .episode_id(databyname.getEpisode_id())
-                 .url(databyname.getUrl())
-                 .planets(databyname.getPlanets().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
-                 .peoples(databyname.getPeoples().stream().map(i->i.getUrl()).collect(Collectors.toList()))
+                 .title(dataByName.getTitle())
+                 .episode_id(dataByName.getEpisode_id())
+                 .url(dataByName.getUrl())
+                 .planets(dataByName.getPlanets().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
+                 .peoples(dataByName.getPeoples().stream().map(i->i.getUrl()).collect(Collectors.toList()))
                  .build();
         return response;
     }
 
     @Override
     public StarWarResponse getDataById(Integer id) {
-        Film databyid = filmRepo.findByFilmid(id).orElseThrow(()-> new StarWarItemIdNotFoundException(id,"Planet id not found in database"));
+        Film dataById = filmRepo.findByFilmid(id).orElseThrow(()-> new StarWarItemIdNotFoundException(id,"Planet id not found in database"));
 
         StarWarResponse filmResponse = FilmResponse.builder()
-                .title(databyid.getTitle())
-                .episode_id(databyid.getEpisode_id())
-                .url(databyid.getUrl())
-                .planets(databyid.getPlanets().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
-                .peoples(databyid.getPeoples().stream().map(i->i.getUrl()).collect(Collectors.toList()))
+                .title(dataById.getTitle())
+                .episode_id(dataById.getEpisode_id())
+                .url(dataById.getUrl())
+                .planets(dataById.getPlanets().stream().map(i-> i.getUrl()).collect(Collectors.toList()))
+                .peoples(dataById.getPeoples().stream().map(i->i.getUrl()).collect(Collectors.toList()))
                 .build();
         return filmResponse;
     }

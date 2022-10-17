@@ -26,7 +26,7 @@ public class StarWarController {
 	
 	@Autowired
 	@Lazy
-	RestTemplate reststarapi;
+	RestTemplate restTemplate;
 
 	@Autowired
 	PlanetService planetService;

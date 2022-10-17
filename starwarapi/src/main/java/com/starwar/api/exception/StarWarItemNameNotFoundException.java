@@ -12,6 +12,5 @@ import lombok.Setter;
 public class StarWarItemNameNotFoundException extends  RuntimeException {
 
     String message;
-
     String name;
 }
