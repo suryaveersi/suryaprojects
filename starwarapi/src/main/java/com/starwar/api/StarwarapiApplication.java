@@ -3,13 +3,19 @@ package com.starwar.api;
 import com.starwar.api.dao.FilmRepo;
 import com.starwar.api.dao.PeopleRepo;
 import com.starwar.api.dao.PlanetRepo;
+import com.starwar.api.dao.UserRepository;
 import com.starwar.api.model.Film;
 import com.starwar.api.model.People;
 import com.starwar.api.model.Planet;
+import com.starwar.api.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,8 +24,14 @@ import java.util.List;
 
 @SpringBootApplication
 @ComponentScan(value="com.starwar.api")
-public class StarwarapiApplication {
+public class StarwarapiApplication  implements CommandLineRunner {
 
+
+	@Autowired
+	BCryptPasswordEncoder bcrypt;
+
+	@Autowired
+	UserRepository userRepository;
 
 
 	public static void main(String[] args) {
@@ -75,5 +87,21 @@ public class StarwarapiApplication {
 
 	}
 
+	@Value("${spring.username}")
+	String username;
+	@Value("${spring.password}")
+	String password;
 
+	@Override
+	public void run(String... args) throws Exception {
+
+		User user = new User();
+
+		user.setUsername(username);
+		user.setPassword(bcrypt.encode(password));
+		user.setEmail("surya1207@gmail.com");
+		user.setRole("ROLE_NORMAL");
+		userRepository.save(user);
+
+	}
 }

@@ -1,0 +1,10 @@
+server:
+  port: 8089
+
+spring:
+  username: anshu
+  password: password
+
+  datasource:
+    username: surya
+    password: password
