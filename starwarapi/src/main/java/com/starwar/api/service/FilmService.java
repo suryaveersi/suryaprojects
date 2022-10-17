@@ -25,7 +25,7 @@ public class FilmService implements FetchData {
     FilmRepo filmRepo;
 
 
-    public List<StarWarResponse> getFilmAllData() {
+    public List<StarWarResponse> getAllData() {
         List<Film> films = filmRepo.findAll();
 
         List<StarWarResponse> filmResponseList = new ArrayList<>();

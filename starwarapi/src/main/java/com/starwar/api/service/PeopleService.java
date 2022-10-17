@@ -38,7 +38,7 @@ public class PeopleService implements FetchData {
         return  peopleResponse;
     }
 
-    public List<StarWarResponse> getPeopleAllData()
+    public List<StarWarResponse> getAllData()
     {
         List<People> peoples = peopleRepo.findAll();
 
@@ -47,7 +47,7 @@ public class PeopleService implements FetchData {
 
         for(People people : peoples) {
 
-            PeopleResponse peopleResponse = PeopleResponse.builder()
+            StarWarResponse peopleResponse = PeopleResponse.builder()
                     .url(people.getUrl())
                     .birth_year(people.getBirth_year())
                     .gender(people.getGender())

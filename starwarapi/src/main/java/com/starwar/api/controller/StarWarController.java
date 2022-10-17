@@ -2,14 +2,7 @@ package com.starwar.api.controller;
 
 
 import java.util.List;
-import java.util.stream.Collectors;
-
-import com.starwar.api.dto.FilmResponse;
-import com.starwar.api.dto.PeopleResponse;
-import com.starwar.api.dto.PlanetResponse;
 import com.starwar.api.dto.StarWarResponse;
-import com.starwar.api.model.Film;
-import com.starwar.api.model.People;
 import com.starwar.api.service.FilmService;
 import com.starwar.api.service.PeopleService;
 import com.starwar.api.service.PlanetService;
@@ -17,13 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.InvalidEndpointRequestException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Lazy;
-
 import org.springframework.http.MediaType;
-
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import com.starwar.api.model.Planet;
-import com.starwar.api.model.Type;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
@@ -50,25 +39,25 @@ public class StarWarController {
 
 
 	@GetMapping(value="/api/{type}",produces=MediaType.APPLICATION_JSON_VALUE)
-	@CircuitBreaker(name="StarWarService", fallbackMethod = "getdefaultuser")
+	@CircuitBreaker(name="StarWarService", fallbackMethod = "getDefaultUser")
 	public List<StarWarResponse> getAllDataByType(@PathVariable("type") String type)
 	{
 
 		if(type.equals("planet"))
 		{
-			List<StarWarResponse> planetResponses = planetService.getPlanetAllData();
+			List<StarWarResponse> planetResponses = planetService.getAllData();
 			return planetResponses;
 		}
 
 		if(type.equals("film"))
 		{
-			List<StarWarResponse> filmResponses = filmService.getFilmAllData();
+			List<StarWarResponse> filmResponses = filmService.getAllData();
 			return filmResponses;
 		}
 
 		if(type.equals("people"))
 		{
-			List<StarWarResponse> peopleResponses = peopleService.getPeopleAllData();
+			List<StarWarResponse> peopleResponses = peopleService.getAllData();
 			return peopleResponses;
 		}
 
@@ -84,22 +73,22 @@ public class StarWarController {
 
 		if(type.equals("planet"))
 		{
-			StarWarResponse planetResponse = planetService.getDataById(id);
+			StarWarResponse planeDataById = planetService.getDataById(id);
 
-			return planetResponse;
+			return planeDataById;
 		}
 		if(type.equals("film"))
 		{
-			StarWarResponse filmdatabyid = filmService.getDataById(id);
+			StarWarResponse filmDataById = filmService.getDataById(id);
 
-			return filmdatabyid;
+			return filmDataById;
 		}
 
 		if(type.equals("people"))
 		{
-			StarWarResponse peopledatabyid = peopleService.getDataById(id);
+			StarWarResponse peopleDataById = peopleService.getDataById(id);
 
-			return peopledatabyid;
+			return peopleDataById;
 		}
 
 		else {
@@ -115,20 +104,20 @@ public class StarWarController {
 
 		if(type.equals("planet"))
 		{
-			StarWarResponse planetdatabyname = planetService.getDataByName(name);
+			StarWarResponse planetDataByName = planetService.getDataByName(name);
 
-			return planetdatabyname;
+			return planetDataByName;
 		}
 		if(type.equals("film"))
 		{
-			StarWarResponse filmdatabyname = filmService.getDataByName(name);
-			return filmdatabyname;
+			StarWarResponse filmDataByName = filmService.getDataByName(name);
+			return filmDataByName;
 		}
 		if(type.equals("people"))
 		{
-			StarWarResponse peopledatabyid = peopleService.getDataByName(name);
+			StarWarResponse peopleDataById = peopleService.getDataByName(name);
 
-			return peopledatabyid;
+			return peopleDataById;
 		}
 
 		else {
@@ -139,30 +128,20 @@ public class StarWarController {
 	
 
 
-		public List<Type> getdefaultuser(Exception e)
-
+		public String getDefaultUser(Exception e)
 		{
-			Type typeplanet = new Planet();
-			List<Type> persontype = typeplanet.data();
-
-
-			return persontype;
-
+			return "Service Not Available" ;
 		}
 	
-		public Type getdefaultuser2(Exception e)
+		public String getDefaultUser2(Exception e)
 
 		{
-		Type typeplanet = new Planet();
-		List<Type> persontype = typeplanet.data();
-		persontype.stream().findFirst().get();
-		return persontype.stream().findFirst().get();
-
+			return "Service Not Available" ;
 		}
 
 
 		@Bean
-		public RestTemplate resttempalate()
+		public RestTemplate restTemplate()
 		{
 		   return new RestTemplate();
 		}

@@ -37,7 +37,7 @@ public class PlanetService implements FetchData {
         return planetResponse;
     }
 
-    public List<StarWarResponse> getPlanetAllData()
+    public List<StarWarResponse> getAllData()
     {
         List<StarWarResponse> planetResponseList = new ArrayList<>();
         List<Planet> datas = planetRepo.findAll();
