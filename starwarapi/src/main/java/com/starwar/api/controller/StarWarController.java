@@ -3,6 +3,8 @@ package com.starwar.api.controller;
 
 import java.util.List;
 import com.starwar.api.dto.StarWarResponse;
+import com.starwar.api.model.Planet;
+import com.starwar.api.model.Type;
 import com.starwar.api.service.FilmService;
 import com.starwar.api.service.PeopleService;
 import com.starwar.api.service.PlanetService;
@@ -125,19 +127,30 @@ public class StarWarController {
 		}
 
 	}
-	
 
 
-		public String getDefaultUser(Exception e)
-		{
-			return "Service Not Available" ;
-		}
-	
-		public String getDefaultUser2(Exception e)
 
-		{
-			return "Service Not Available" ;
-		}
+
+
+	public List<Type> getDefaultUser(Exception e)
+	{
+		Type typeplanet = new Planet();
+		List<Type> persontype = typeplanet.data();
+
+
+		return persontype;
+
+	}
+
+	public Type getDefaultUser2(Exception e)
+
+	{
+		Type typeplanet = new Planet();
+		List<Type> persontype = typeplanet.data();
+		persontype.stream().findFirst().get();
+		return persontype.stream().findFirst().get();
+
+	}
 
 
 		@Bean
