@@ -2,3 +2,125 @@
 2022-10-17 00:13:25.522  INFO 40040 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-10-17 00:13:25.535  INFO 40040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-10-17 00:13:25.537  INFO 40040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-17 01:06:55.014  INFO 11316 --- [main] com.starwar.api.StarwarapiApplication    : Starting StarwarapiApplication using Java 1.8.0_74 on DVCGNH6112478 with PID 11316 (C:\TestProjects\starwarapi\target\classes started by SCHUNDAW in C:\TestProjects\starwarapi)
+2022-10-17 01:06:55.032  INFO 11316 --- [main] com.starwar.api.StarwarapiApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 01:06:57.352  INFO 11316 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 01:06:57.355  INFO 11316 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 01:06:57.398  INFO 11316 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 01:06:57.399  INFO 11316 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 01:06:57.464  INFO 11316 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 01:06:57.465  INFO 11316 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 01:06:57.508  INFO 11316 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 01:06:57.509  INFO 11316 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 01:06:57.549  INFO 11316 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 01:06:57.550  INFO 11316 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 01:06:57.624  INFO 11316 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 01:06:57.625  INFO 11316 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 01:06:57.957  INFO 11316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-17 01:06:58.105  INFO 11316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 3 JPA repository interfaces.
+2022-10-17 01:07:00.622  INFO 11316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+2022-10-17 01:07:00.645  INFO 11316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 01:07:00.646  INFO 11316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 01:07:01.026  INFO 11316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 01:07:01.027  INFO 11316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5769 ms
+2022-10-17 01:07:01.214  WARN 11316 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-17 01:07:01.580  INFO 11316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-17 01:07:02.082  INFO 11316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-17 01:07:02.212  INFO 11316 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-17 01:07:02.357  INFO 11316 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-10-17 01:07:02.849  INFO 11316 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-17 01:07:03.155  INFO 11316 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-17 01:07:04.851  INFO 11316 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-17 01:07:04.869  INFO 11316 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-17 01:07:05.460  INFO 11316 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:starwar'
+2022-10-17 01:07:05.635  INFO 11316 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet webServlet was not registered (possibly already registered?)
+2022-10-17 01:07:07.881  INFO 11316 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e5c765, org.springframework.security.web.context.SecurityContextPersistenceFilter@a033b8, org.springframework.security.web.header.HeaderWriterFilter@563809, org.springframework.security.web.authentication.logout.LogoutFilter@7d8613, com.starwar.api.security.JwtTokenFilter@1188050, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a0c99c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18e1bf5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1aa621b, org.springframework.security.web.session.SessionManagementFilter@a7ea7c, org.springframework.security.web.access.ExceptionTranslationFilter@1e0f380, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@820978]
+2022-10-17 01:07:10.236  INFO 11316 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-17 01:07:10.348  INFO 11316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+2022-10-17 01:07:10.363  INFO 11316 --- [main] com.starwar.api.StarwarapiApplication    : Started StarwarapiApplication in 16.354 seconds (JVM running for 17.692)
+2022-10-17 01:10:08.190  INFO 11316 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-17 01:10:08.191  INFO 11316 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-17 01:10:08.207  INFO 11316 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-17 01:10:08.211  INFO 11316 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-17 13:12:26.391  INFO 23564 --- [main] com.starwar.api.StarwarapiApplication    : Starting StarwarapiApplication using Java 1.8.0_74 on DVCGNH6112478 with PID 23564 (C:\TestProjects\starwarapi\target\classes started by SCHUNDAW in C:\TestProjects\starwarapi)
+2022-10-17 13:12:26.399  INFO 23564 --- [main] com.starwar.api.StarwarapiApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 13:12:28.050  INFO 23564 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:12:28.052  INFO 23564 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:12:28.083  INFO 23564 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:12:28.084  INFO 23564 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:12:28.131  INFO 23564 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:12:28.132  INFO 23564 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:12:28.159  INFO 23564 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:12:28.160  INFO 23564 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:12:28.185  INFO 23564 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:12:28.186  INFO 23564 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:12:28.205  INFO 23564 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:12:28.206  INFO 23564 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:12:28.531  INFO 23564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-17 13:12:28.711  INFO 23564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 3 JPA repository interfaces.
+2022-10-17 13:12:31.034  INFO 23564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+2022-10-17 13:12:31.054  INFO 23564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 13:12:31.055  INFO 23564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 13:12:31.415  INFO 23564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 13:12:31.416  INFO 23564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4882 ms
+2022-10-17 13:12:31.591  WARN 23564 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-17 13:12:31.921  INFO 23564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-17 13:12:32.428  INFO 23564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-17 13:12:32.542  INFO 23564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-17 13:12:32.713  INFO 23564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-10-17 13:12:33.188  INFO 23564 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-17 13:12:33.486  INFO 23564 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-17 13:12:35.109  INFO 23564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-17 13:12:35.128  INFO 23564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-17 13:12:35.686  INFO 23564 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:starwar'
+2022-10-17 13:12:35.865  INFO 23564 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet webServlet was not registered (possibly already registered?)
+2022-10-17 13:12:37.977  INFO 23564 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e3de36, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ae53d, org.springframework.security.web.header.HeaderWriterFilter@1575bcd, org.springframework.security.web.authentication.logout.LogoutFilter@db2c7b, com.starwar.api.security.JwtTokenFilter@e33c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fe17b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16054b7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3eb4e, org.springframework.security.web.session.SessionManagementFilter@68c0ea, org.springframework.security.web.access.ExceptionTranslationFilter@1a0c261, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1df0e9]
+2022-10-17 13:12:39.938  INFO 23564 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-17 13:12:40.065  INFO 23564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+2022-10-17 13:12:40.081  INFO 23564 --- [main] com.starwar.api.StarwarapiApplication    : Started StarwarapiApplication in 14.772 seconds (JVM running for 15.771)
+2022-10-17 13:13:12.146  INFO 23564 --- [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-17 13:13:12.148  INFO 23564 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-17 13:13:12.159  INFO 23564 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2022-10-17 13:23:02.582  INFO 23564 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-17 13:23:02.583  INFO 23564 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-17 13:23:02.598  INFO 23564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-17 13:23:02.607  INFO 23564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-17 13:23:16.698  INFO 1908 --- [main] com.starwar.api.StarwarapiApplication    : Starting StarwarapiApplication using Java 1.8.0_74 on DVCGNH6112478 with PID 1908 (C:\TestProjects\starwarapi\target\classes started by SCHUNDAW in C:\TestProjects\starwarapi)
+2022-10-17 13:23:16.703  INFO 1908 --- [main] com.starwar.api.StarwarapiApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 13:23:18.153  INFO 1908 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:23:18.155  INFO 1908 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:23:18.180  INFO 1908 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:23:18.181  INFO 1908 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:23:18.218  INFO 1908 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:23:18.218  INFO 1908 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:23:18.243  INFO 1908 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:23:18.244  INFO 1908 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:23:18.265  INFO 1908 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:23:18.266  INFO 1908 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:23:18.287  INFO 1908 --- [main] i.g.r.utils.RxJava2OnClasspathCondition  : RxJava2 related Aspect extensions are not activated, because RxJava2 is not on the classpath.
+2022-10-17 13:23:18.288  INFO 1908 --- [main] i.g.r.utils.ReactorOnClasspathCondition  : Reactor related Aspect extensions are not activated because Reactor is not on the classpath.
+2022-10-17 13:23:18.630  INFO 1908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-17 13:23:18.760  INFO 1908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113 ms. Found 3 JPA repository interfaces.
+2022-10-17 13:23:20.862  INFO 1908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+2022-10-17 13:23:20.881  INFO 1908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 13:23:20.881  INFO 1908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 13:23:21.219  INFO 1908 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 13:23:21.219  INFO 1908 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4382 ms
+2022-10-17 13:23:21.383  WARN 1908 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-17 13:23:21.699  INFO 1908 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-17 13:23:22.192  INFO 1908 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-17 13:23:22.305  INFO 1908 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-17 13:23:22.458  INFO 1908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-10-17 13:23:22.919  INFO 1908 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-17 13:23:23.246  INFO 1908 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-17 13:23:24.839  INFO 1908 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-17 13:23:24.856  INFO 1908 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-17 13:23:25.406  INFO 1908 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:starwar'
+2022-10-17 13:23:25.558  INFO 1908 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet webServlet was not registered (possibly already registered?)
+2022-10-17 13:23:27.651  INFO 1908 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1575bcd, org.springframework.security.web.context.SecurityContextPersistenceFilter@78f456, org.springframework.security.web.header.HeaderWriterFilter@1d23478, org.springframework.security.web.authentication.logout.LogoutFilter@18fe415, com.starwar.api.security.JwtTokenFilter@149d347, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36448b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18a952f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ed4a51, org.springframework.security.web.session.SessionManagementFilter@569672, org.springframework.security.web.access.ExceptionTranslationFilter@1988c45, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12be319]
+2022-10-17 13:23:29.909  INFO 1908 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-17 13:23:30.068  INFO 1908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+2022-10-17 13:23:30.091  INFO 1908 --- [main] com.starwar.api.StarwarapiApplication    : Started StarwarapiApplication in 14.352 seconds (JVM running for 15.269)
+2022-10-17 13:23:35.230  INFO 1908 --- [http-nio-8086-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-17 13:23:35.231  INFO 1908 --- [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-17 13:23:35.235  INFO 1908 --- [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms

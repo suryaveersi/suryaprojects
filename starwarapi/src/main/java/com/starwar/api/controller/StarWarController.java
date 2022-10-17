@@ -51,19 +51,25 @@ public class StarWarController {
 
 	@GetMapping(value="/api/{type}",produces=MediaType.APPLICATION_JSON_VALUE)
 	@CircuitBreaker(name="StarWarService", fallbackMethod = "getdefaultuser")
-	public List<Planet> getAllDataByType(@PathVariable("type") String type)
+	public List<StarWarResponse> getAllDataByType(@PathVariable("type") String type)
 	{
 
 		if(type.equals("planet"))
 		{
-			List<Planet> obj = planetService.getPlanetAllData();
-			List<String> urls = obj.stream().map(i-> i.getFilms().stream().map(j-> j.getUrl()).collect(Collectors.toList()))
-					.collect(Collectors.toList()).stream().flatMap(List::stream).collect(Collectors.toList());
-		    System.out.println(urls);
+			List<StarWarResponse> planetResponses = planetService.getPlanetAllData();
+			return planetResponses;
+		}
 
+		if(type.equals("film"))
+		{
+			List<StarWarResponse> filmResponses = filmService.getFilmAllData();
+			return filmResponses;
+		}
 
-			System.out.println("hi");
-			return obj;
+		if(type.equals("people"))
+		{
+			List<StarWarResponse> peopleResponses = peopleService.getPeopleAllData();
+			return peopleResponses;
 		}
 
 		else {

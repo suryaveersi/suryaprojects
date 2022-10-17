@@ -9,7 +9,6 @@ public interface FetchData<T extends StarWarResponse> {
     T getDataById(Integer id);
     T getDataByName(String name);
 
- 
 
 
 }
