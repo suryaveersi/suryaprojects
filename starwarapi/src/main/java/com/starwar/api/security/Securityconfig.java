@@ -41,10 +41,15 @@ public class Securityconfig extends WebSecurityConfigurerAdapter {
 		 * authentrypoint);
 		 */
 		
-	    http.csrf().disable().
-		authorizeRequests().antMatchers("/authenticatetoken").permitAll().and().
-				authorizeRequests().antMatchers("/h2-console/**")
-				.permitAll().anyRequest().authenticated();
+	    http.cors().and().csrf().disable()
+				.authorizeRequests().antMatchers("/authenticatetoken").permitAll().and()
+				.authorizeRequests().antMatchers("/api-docs/**").permitAll().and()
+				.authorizeRequests().antMatchers("/actuator/**").permitAll().and()
+				.authorizeRequests().antMatchers("/swagger*/**").permitAll().and()
+				.authorizeRequests().antMatchers("/swagger-ui/**").permitAll().and()
+				.authorizeRequests().antMatchers("/h2-console/**").permitAll()
+				.anyRequest().authenticated();
+
 		http.headers().frameOptions().disable();
 		
 		

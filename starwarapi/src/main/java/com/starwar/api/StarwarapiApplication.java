@@ -11,7 +11,6 @@ import com.starwar.api.model.User;
 import com.starwar.api.util.DecoderUtil;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 import org.jasypt.encryption.StringEncryptor;
-import org.jasypt.intf.cli.JasyptPBEStringDecryptionCLI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,10 +20,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 @SpringBootApplication
@@ -38,6 +33,17 @@ public class StarwarapiApplication  implements CommandLineRunner {
 
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	DecoderUtil decoderUtil;
+
+	@Autowired
+	@Qualifier(value="jasyptStringEncryptor")
+	StringEncryptor stringEncryptor;
+	@Value("${spring.security.username}")
+	String username;
+	@Value("${spring.security.password}")
+	String password;
 
 
 	public static void main(String[] args) {
@@ -93,16 +99,7 @@ public class StarwarapiApplication  implements CommandLineRunner {
 
 	}
 
-	@Autowired
-	DecoderUtil decoderUtil;
 
-	@Autowired
-	@Qualifier(value="jasyptStringEncryptor")
-	StringEncryptor stringEncryptor;
-	@Value("${spring.security.username}")
-	String username;
-	@Value("${spring.security.password}")
-	String password;
 
 	@Override
 	public void run(String... args) throws Exception {
