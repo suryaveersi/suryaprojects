@@ -2,9 +2,14 @@ server:
   port: 8087
 
 spring:
-  username: surya
-  password: password
+  security:
+    username: admin
+    password: ENC(rMXdXHk58MdPDuTHhQLl7w==)
 
   datasource:
     username: surya
-    password: password
+    password: ENC(57JNBOZxv4EcKQOBGvbE1w==)
+
+jasypt:
+  encryptor:
+    password: suryaveerkk

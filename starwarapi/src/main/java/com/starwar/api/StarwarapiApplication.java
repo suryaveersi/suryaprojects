@@ -8,7 +8,12 @@ import com.starwar.api.model.Film;
 import com.starwar.api.model.People;
 import com.starwar.api.model.Planet;
 import com.starwar.api.model.User;
+import com.starwar.api.util.DecoderUtil;
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
+import org.jasypt.encryption.StringEncryptor;
+import org.jasypt.intf.cli.JasyptPBEStringDecryptionCLI;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +28,7 @@ import java.util.List;
 
 
 @SpringBootApplication
+@EnableEncryptableProperties
 @ComponentScan(value="com.starwar.api")
 public class StarwarapiApplication  implements CommandLineRunner {
 
@@ -87,13 +93,21 @@ public class StarwarapiApplication  implements CommandLineRunner {
 
 	}
 
-	@Value("${spring.username}")
+	@Autowired
+	DecoderUtil decoderUtil;
+
+	@Autowired
+	@Qualifier(value="jasyptStringEncryptor")
+	StringEncryptor stringEncryptor;
+	@Value("${spring.security.username}")
 	String username;
-	@Value("${spring.password}")
+	@Value("${spring.security.password}")
 	String password;
 
 	@Override
 	public void run(String... args) throws Exception {
+
+
 
 		User user = new User();
 
